@@ -8,6 +8,7 @@ import { DestinationAndDateHeader } from "./destination-and-date-header";
 
 export function TripDetailsPage(){
     const [isCreateActivityModalOpen,setIsCreateActivityModalOpen] = useState(false);
+    const [isCreateLinkModalOpen,setIsCreateLinkModalOpen] = useState(false);
 
     function openCreateActivityModal(){
         setIsCreateActivityModalOpen(true);
@@ -15,6 +16,14 @@ export function TripDetailsPage(){
 
     function closeCreateActivityModal(){
         setIsCreateActivityModalOpen(false);
+    }
+
+    function openCreateLinkModal(){
+        setIsCreateLinkModalOpen(true);
+    }
+
+    function closeCreateLinkModal(){
+        setIsCreateLinkModalOpen(false);
     }
 
     return(
@@ -32,7 +41,7 @@ export function TripDetailsPage(){
                 </div>
 
                 <div className="w-80 space-y-6">
-                    <ImportantLinks />
+                    <ImportantLinks  openCreateLinkModal={openCreateLinkModal} isCreateLinkModalOpen={isCreateLinkModalOpen} closeCreateLinkModal={closeCreateLinkModal}/>
 
                     <div className="w-full h-px bg-zinc-800" />
 
